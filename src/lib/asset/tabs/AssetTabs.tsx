@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
-import AssetGrid from '@/components/asset/AssetGrid'
+import AssetGrid from '@/lib/asset/AssetGrid'
 import { layouts, storyboards } from '@/lib/db'
-import AssetCard from '@/components/asset/AssetCard'
-import FeaturedSection from '@/components/tab-sections/FeaturedSection'
-import KpiSection from '@/components/tab-sections/KpiSection'
-import TrendingSection from '@/components/tab-sections/TrendingSection'
-import AssetModalRenderer from '@/components/asset/AssetModalRenderer'
-import { useRequestModalStore } from '@/components/modals/RequestModal'
+import AssetCard from '@/lib/asset/AssetCard'
+import FeaturedSection from '@/lib/asset/tabs/sections/FeaturedSection'
+import KpiSection from '@/lib/asset/tabs/sections/KpiSection'
+import TrendingSection from '@/lib/asset/tabs/sections/TrendingSection'
+import AssetModalRenderer from '@/lib/asset/modal/AssetModalRenderer'
+import { useRequestModalStore } from '@/lib/request/RequestModal'
 
 const tabs = [ 'Featured', 'KPI', 'Layouts', 'Storyboards' ] as const
 type TabT = (typeof tabs[number])

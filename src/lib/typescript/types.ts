@@ -1,4 +1,6 @@
 
+// * TS helpers
+
 export type {
   Func, 
 }

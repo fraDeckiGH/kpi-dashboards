@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { SearchBar } from '@/components/SearchBar'
-import AssetTabs from '@/components/asset/AssetTabs'
-import NewLayoutModal from '@/components/modals/NewLayoutModal'
+import { SearchBar } from '@/lib/search/SearchBar'
+import AssetTabs from '@/lib/asset/tabs/AssetTabs'
+import NewLayoutModal from '@/lib/layout/modals/NewLayoutModal'
 import { Button } from '@/components/ui/button'
 import { Grid2x2PlusIcon, PackagePlusIcon } from 'lucide-react'
-import RequestModal, { useRequestModalStore } from '@/components/modals/RequestModal'
+import RequestModal, { useRequestModalStore } from '@/lib/request/RequestModal'
 
 export default function LibraryContent() {
   const open_requestModal = useRequestModalStore.use.open()

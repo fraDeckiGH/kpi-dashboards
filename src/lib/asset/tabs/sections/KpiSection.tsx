@@ -1,7 +1,7 @@
 import React from 'react'
-import AssetCard from '@/components/asset/AssetCard'
-import AssetGrid from '@/components/asset/AssetGrid'
-import { getIcon } from '@/components/visual/Visual'
+import AssetCard from '@/lib/asset/AssetCard'
+import AssetGrid from '@/lib/asset/AssetGrid'
+import { getIcon } from '@/lib/visual/Visual'
 import { useKpisStore } from '@/lib/kpi/db/store-kpi'
 
 export default function KpiSection() {

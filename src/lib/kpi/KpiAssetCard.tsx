@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { getIcon } from '@/components/visual/Visual'
+import { getIcon } from '@/lib/visual/Visual'
 import { Kpi } from '@/lib/db'
-import MiniVisual from '@/components/visual/MiniVisual'
+import MiniVisual from '@/lib/visual/MiniVisual'
 
 interface Props {
   asset: Kpi

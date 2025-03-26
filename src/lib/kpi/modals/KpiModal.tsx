@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import AssetModal from '@/components/modals/AssetModal'
-import { useAssetModalRendererStore } from '@/components/asset/AssetModalRenderer'
+import AssetModal from '@/lib/asset/modal/AssetModal'
+import { useAssetModalRendererStore } from '@/lib/asset/modal/AssetModalRenderer'
 import { 
   CheckIcon, 
   XIcon, 
@@ -8,7 +8,7 @@ import {
   DatabaseIcon, 
 } from 'lucide-react'
 import { Kpi } from '@/lib/db'
-import Visual from '@/components/visual/Visual'
+import Visual from '@/lib/visual/Visual'
 import { useKpisStore } from '@/lib/kpi/db/store-kpi'
 
 export default function KpiModal() {

@@ -1,20 +1,7 @@
-import { Kpi } from "@/lib/db"
-import { AssetBase, Visual } from "@/lib/db/types"
+import { Layout } from "@/lib/db"
 
 export {
   layouts, 
-}
-export type {
-  Layout,
-}
-
-type Layout = AssetBase & {
-  desc: string // present in the images
-  /** KPIs being tracked */
-  kpisUsed: (Kpi["id"])[]
-  pagesNo: number
-  usageCount: number
-  visual: Visual
 }
 
 const layouts: Layout[] = [

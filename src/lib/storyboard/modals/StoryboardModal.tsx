@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import AssetModal from '@/components/modals/AssetModal'
+import AssetModal from '@/lib/asset/modal/AssetModal'
 import { PackagePlusIcon, PresentationIcon } from 'lucide-react'
-import { useAssetModalRendererStore } from '@/components/asset/AssetModalRenderer'
+import { useAssetModalRendererStore } from '@/lib/asset/modal/AssetModalRenderer'
 import { Storyboard } from '@/lib/db'
 import { affiliates } from '@/lib/affiliate/db/mock-affiliate'
 import { useKpisStore } from '@/lib/kpi/db/store-kpi'
-import { useRequestModalStore } from '@/components/modals/RequestModal'
+import { useRequestModalStore } from '@/lib/request/RequestModal'
 
 export default function StoryboardModal() {
   const asset = useAssetModalRendererStore.use.asset() as Storyboard

@@ -1,5 +1,5 @@
-import { getIcon } from "@/components/visual/Visual";
-import { Visual } from "@/lib/db/types";
+import { getIcon } from "@/lib/visual/Visual";
+import { Visual } from "@/lib/db";
 
 interface Props {
   visual: Visual

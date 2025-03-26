@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/dialog'
 import { PackagePlusIcon, SendIcon, ChevronDownIcon } from 'lucide-react'
 import { create } from 'zustand'
-import { createSelectors } from '@/lib/zustand'
+import { createSelectors } from '@/lib/utils/zustand'
 
 const areas = [ 'Featured', 'KPI', 'Layouts', 'Storyboards' ] as const
 type Area = (typeof areas[number]) | ""

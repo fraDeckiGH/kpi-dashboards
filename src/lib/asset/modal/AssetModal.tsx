@@ -10,10 +10,10 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { XIcon, LinkIcon, BookmarkIcon } from 'lucide-react'
-import { useAssetModalRendererStore } from '@/components/asset/AssetModalRenderer'
+import { useAssetModalRendererStore } from '@/lib/asset/modal/AssetModalRenderer'
 import { create } from 'zustand'
-import { createSelectors } from '@/lib/zustand'
-import { AssetBase } from '@/lib/db/types'
+import { createSelectors } from '@/lib/utils/zustand'
+import { AssetBase } from '@/lib/db'
 
 interface Props {
   children: React.ReactNode
