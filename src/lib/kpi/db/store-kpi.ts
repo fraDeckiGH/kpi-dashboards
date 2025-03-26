@@ -1,7 +1,7 @@
 import { create } from 'zustand'
-import { createSelectors } from '@/lib/zustand'
+import { createSelectors } from '@/lib/utils/zustand'
 import { Kpi, kpis } from '@/lib/db'
-import { Visual } from '@/lib/db/types'
+import { Visual } from '@/lib/db'
 
 export const useKpisStore = createSelectors(
   create<{

@@ -1,5 +1,5 @@
-import { getIcon } from "@/components/visual/Visual";
-import { Visual as VisualT } from "@/lib/db/types";
+import { getIcon } from "@/lib/visual/Visual";
+import { Visual as VisualT } from "@/lib/db";
 import { CheckIcon, StarIcon } from "lucide-react";
 
 interface Props {

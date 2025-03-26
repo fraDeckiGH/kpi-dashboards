@@ -1,15 +1,7 @@
+import { Affiliate } from "@/lib/db"
 
 export {
   affiliates, 
-}
-export type {
-  Affiliate,
-}
-
-/** subsidiary */
-type Affiliate = {
-  id: string
-  name: string
 }
 
 const affiliates: Affiliate[] = [

@@ -1,11 +1,11 @@
 'use client'
 
-import { Asset } from '@/lib/db/types'
+import { Asset } from '@/lib/db'
 import LayoutModal from '@/lib/layout/modals/LayoutModal'
 import KpiModal from '@/lib/kpi/modals/KpiModal'
 import StoryboardModal from '@/lib/storyboard/modals/StoryboardModal'
 import { create } from 'zustand'
-import { createSelectors } from '@/lib/zustand'
+import { createSelectors } from '@/lib/utils/zustand'
 
 export default function AssetModalRenderer() {
   const isModalOpen = useAssetModalRendererStore.use.isModalOpen()

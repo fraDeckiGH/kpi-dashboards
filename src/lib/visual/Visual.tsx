@@ -1,4 +1,4 @@
-import { Visual as VisualT } from "@/lib/db/types";
+import { Visual as VisualT } from "@/lib/db";
 import { BarChart3Icon, GaugeIcon, LineChartIcon, ChartPieIcon, TableIcon } from "lucide-react";
 
 export function getIcon(visual: VisualT, size: number) {

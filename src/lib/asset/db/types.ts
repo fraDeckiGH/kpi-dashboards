@@ -5,7 +5,6 @@ import { Kpi, Layout, Storyboard } from "@/lib/db"
 export type {
   Asset, 
   AssetBase, 
-  Visual, 
 }
 
 type Asset = 
@@ -28,14 +27,6 @@ type Sentiment = {
   featured: boolean
   trending: boolean
 }
-
-type Visual = 
-  | `bar-chart` 
-  | `gauge` 
-  | `line-chart` 
-  | `pie-chart` 
-  | `table`
-;
 
 
 

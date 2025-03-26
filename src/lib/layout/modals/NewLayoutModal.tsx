@@ -12,9 +12,9 @@ import {
 import { CheckIcon, Grid2x2PlusIcon, PackagePlusIcon, SquareIcon, WorkflowIcon } from 'lucide-react'
 import KpiAssetCard from '@/lib/kpi/KpiAssetCard'
 import { useKpisStore } from '@/lib/kpi/db/store-kpi'
-import VisualSimplified from '@/components/visual/VisualSimplified'
+import VisualSimplified from '@/lib/visual/VisualSimplified'
 import { Kpi } from '@/lib/db'
-import { useRequestModalStore } from '@/components/modals/RequestModal'
+import { useRequestModalStore } from '@/lib/request/RequestModal'
 
 interface Props {
   isOpen: boolean
