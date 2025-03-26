@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid3x3Icon } from 'lucide-react'
-import AssetModal from '@/lib/asset/modal/AssetModal'
-import { useAssetModalRendererStore } from '@/lib/asset/modal/AssetModalRenderer'
+import AssetModal from '@/lib/asset/modals/AssetModal'
+import { useAssetModalRendererStore } from '@/lib/asset/modals/AssetModalRenderer'
 import { KpiInquiry, Layout } from '@/lib/db'
 import { useKpisStore } from '@/lib/kpi/db/store-kpi'
 

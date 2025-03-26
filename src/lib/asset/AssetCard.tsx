@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid3x3Icon, PresentationIcon, DatabaseIcon } from 'lucide-react'
-import { useAssetModalRendererStore } from '@/lib/asset/modal/AssetModalRenderer'
+import { useAssetModalRendererStore } from '@/lib/asset/modals/AssetModalRenderer'
 import { Asset } from '@/lib/db'
 
 interface Props {
