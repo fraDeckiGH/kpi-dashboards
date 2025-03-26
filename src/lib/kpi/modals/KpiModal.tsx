@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import AssetModal from '@/components/modals/AssetModal'
-import { useAssetModalRendererStore } from '@/components/asset/AssetModalRenderer'
+import AssetModal from '@/components/asset/modal/AssetModal'
+import { useAssetModalRendererStore } from '@/components/asset/modal/AssetModalRenderer'
 import { 
   CheckIcon, 
   XIcon, 

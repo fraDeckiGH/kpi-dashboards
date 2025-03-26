@@ -10,7 +10,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog'
 import { XIcon, LinkIcon, BookmarkIcon } from 'lucide-react'
-import { useAssetModalRendererStore } from '@/components/asset/AssetModalRenderer'
+import { useAssetModalRendererStore } from '@/components/asset/modal/AssetModalRenderer'
 import { create } from 'zustand'
 import { createSelectors } from '@/lib/zustand'
 import { AssetBase } from '@/lib/db/types'

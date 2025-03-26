@@ -1,7 +1,7 @@
 'use client'
 
 // import Image from "next/image"
-import LibraryContent from "@/components/LibraryContent"
+import LibraryContent from "@/lib/LibraryContent"
 
 export default function Home() {
   return (<>

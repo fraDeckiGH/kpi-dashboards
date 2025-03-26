@@ -1,9 +1,9 @@
 'use client'
 
 import { Asset } from '@/lib/db/types'
-import LayoutModal from '@/components/modals/LayoutModal'
-import KpiModal from '@/components/modals/KpiModal'
-import StoryboardModal from '@/components/modals/StoryboardModal'
+import LayoutModal from '@/lib/layout/modals/LayoutModal'
+import KpiModal from '@/lib/kpi/modals/KpiModal'
+import StoryboardModal from '@/lib/storyboard/modals/StoryboardModal'
 import { create } from 'zustand'
 import { createSelectors } from '@/lib/zustand'
 
