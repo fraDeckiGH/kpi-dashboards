@@ -1,15 +1,24 @@
-// import Image from "next/image";
+'use client'
+
+// import Image from "next/image"
+import LibraryContent from "@/components/LibraryContent"
 
 export default function Home() {
-  return (
-    // <main className="flex-1 bg-gradient-to-b from-gray-900 to-black">
-    <main className="flex-1 ">
-      <div className="container  mx-auto px-4 py-8  h-screen  flex flex-col">
-        <h1 className="text-4xl font-bold mb-8">
-          Library
-        </h1>
-        ...content here...
+  return (<>
+    <main 
+      // bg-gradient-to-b from-gray-900 to-black
+      className="flex-1 
+        bg-slate-50
+        relative
+      "
+    >
+      <div className="container h-full
+        mx-auto 
+        px-4 py-8 pb-16
+        flex flex-col
+      ">
+        <LibraryContent></LibraryContent>
       </div>
     </main>
-  );
+  </>);
 }
