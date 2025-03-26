@@ -6,7 +6,7 @@ import AssetCard from '@/lib/asset/AssetCard'
 import FeaturedSection from '@/lib/asset/tabs/sections/FeaturedSection'
 import KpiSection from '@/lib/asset/tabs/sections/KpiSection'
 import TrendingSection from '@/lib/asset/tabs/sections/TrendingSection'
-import AssetModalRenderer from '@/lib/asset/modal/AssetModalRenderer'
+import AssetModalRenderer from '@/lib/asset/modals/AssetModalRenderer'
 import { useRequestModalStore } from '@/lib/request/RequestModal'
 
 const tabs = [ 'Featured', 'KPI', 'Layouts', 'Storyboards' ] as const
