@@ -29,7 +29,7 @@ export default function AssetModalRenderer() {
   }
 }
 
-
+// TODO avoid having to coerce in AssetModal
 type AssetT = Asset
 
 export const useAssetModalRendererStore = createSelectors(

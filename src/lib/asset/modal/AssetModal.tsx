@@ -75,10 +75,9 @@ export default function AssetModal({ children, icon }: Props) {
                     mt-1  px-2 py-1
                     bg-gray-100 text-gray-600
                     text-xs rounded-md
-                    uppercase
+                    capitalize
                   ">
-                    {/* {asset.type} */}
-                    {asset.type.charAt(0).toUpperCase() + asset.type.slice(1)}
+                    {asset.type}
                   </span>
                 </span>
               </DialogTitle>
