@@ -2,15 +2,17 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { KpisService } from './kpis.service';
 import { CreateKpiDto } from './dto/create-kpi.dto';
 import { UpdateKpiDto } from './dto/update-kpi.dto';
+import { Kpi } from 'src/common/db';
 
 @Controller('kpis')
 export class KpisController {
   constructor(private readonly kpisService: KpisService) {}
 
-  @Post()
+  // create
+  /* @Post()
   create(@Body() createKpiDto: CreateKpiDto) {
     return this.kpisService.create(createKpiDto);
-  }
+  } */
 
   @Get()
   findAll() {
@@ -18,17 +20,18 @@ export class KpisController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.kpisService.findOne(+id);
+  findOne(@Param('id') id: Kpi['id']) {
+    return this.kpisService.findOne(id);
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateKpiDto: UpdateKpiDto) {
-    return this.kpisService.update(+id, updateKpiDto);
+  update(@Param('id') id: Kpi['id'], @Body() updateKpiDto: UpdateKpiDto) {
+    return this.kpisService.update(id, updateKpiDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.kpisService.remove(+id);
+  remove(@Param('id') id: Kpi['id']) {
+    return this.kpisService.remove(id);
   }
+  
 }

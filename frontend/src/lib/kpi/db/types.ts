@@ -2,6 +2,7 @@ import { AssetBase, Visual } from "@/lib/db"
 
 export type {
   Kpi,
+  Kpis,
   KpiInquiry,
 }
 
@@ -24,6 +25,9 @@ type Kpi = AssetBase & {
   /** all available */
   visualsAvailable: Visual[]
 }
+
+type Kpis = Record<Kpi["id"], Kpi>
+
 /** aka: business question */
 type KpiInquiry = {
   // id: string

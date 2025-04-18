@@ -8,6 +8,7 @@ import KpiSection from '@/lib/asset/tabs/sections/KpiSection'
 import TrendingSection from '@/lib/asset/tabs/sections/TrendingSection'
 import AssetModalRenderer from '@/lib/asset/modals/AssetModalRenderer'
 import { useRequestModalStore } from '@/lib/request/RequestModal'
+import { useKpis } from '@/lib/asset/tabs/hooks'
 
 const tabs = [ 'Featured', 'KPI', 'Layouts', 'Storyboards' ] as const
 type TabT = (typeof tabs[number])
@@ -18,6 +19,8 @@ export default function AssetTabs() {
   useEffect(() => {
     setArea_requestModal(tabs[0])
   }, [])
+  
+  useKpis()
   
   return (<>
     <Tabs 

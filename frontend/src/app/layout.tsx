@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter, Roboto_Mono } from 'next/font/google'
 import "@/lib/styles/global.css"
+import { Providers } from "@/lib/providers/Providers"
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,7 +35,9 @@ export default function RootLayout({
       <body
         className={`antialiased flex flex-col min-h-screen`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

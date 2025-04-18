@@ -142,6 +142,8 @@ export default function RequestModal() {
   );
 }
 
+const initVal = ""
+
 export const useRequestModalStore = createSelectors(
   create<{
     area: Area
@@ -152,7 +154,7 @@ export const useRequestModalStore = createSelectors(
     
     open: (area?: Area) => void
   }>()((set) => ({
-    area: "",
+    area: initVal,
     setArea: (value) => set({ 
       area: value, 
     }), 

@@ -1,10 +1,10 @@
-import { Kpi } from "@/lib/db"
+import { Kpis } from "@/lib/db"
 
 export {
-  kpis, 
+  // kpis, 
 }
 
-const kpis: Record<Kpi["id"], Kpi> = {
+const kpis: Kpis = {
   'sales-growth-yoy-eu': {
     id: `sales-growth-yoy-eu`,
     name: `Europe Sales Growth YoY`,
