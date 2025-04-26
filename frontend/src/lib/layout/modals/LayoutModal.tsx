@@ -4,6 +4,7 @@ import AssetModal from '@/lib/asset/modals/AssetModal'
 import { useAssetModalRendererStore } from '@/lib/asset/modals/AssetModalRenderer'
 import { KpiInquiry, Layout } from '@/lib/db'
 import { useKpisStore } from '@/lib/kpi/db/store-kpi'
+import { formatDate } from '@/lib/utils/date'
 
 export default function LayoutModal() {
   const asset = useAssetModalRendererStore.use.asset() as Layout
@@ -63,7 +64,7 @@ export default function LayoutModal() {
             <span className="text-xs text-gray-500">Page No.</span>
           </div>
           <div className="flex flex-col items-center border-l">
-            <span className="font-bold text-lg">{asset.lastUpdate}</span>
+            <span className="font-bold text-lg">{formatDate(asset.lastUpdate)}</span>
             <span className="text-xs text-gray-500">Last Updated</span>
           </div>
         </div>

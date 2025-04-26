@@ -3,10 +3,12 @@ export type {
   Visual, 
 }
 
-type Visual = 
-  | `bar-chart` 
-  | `gauge` 
-  | `line-chart` 
-  | `pie-chart` 
-  | `table`
-;
+const visualTypes = [
+  `bar-chart`, 
+  `gauge`, 
+  `line-chart`, 
+  `pie-chart`, 
+  `table`,
+] as const
+
+type Visual = typeof visualTypes[number]

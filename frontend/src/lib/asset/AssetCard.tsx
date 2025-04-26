@@ -2,6 +2,7 @@ import React from 'react'
 import { Grid3x3Icon, PresentationIcon, DatabaseIcon } from 'lucide-react'
 import { useAssetModalRendererStore } from '@/lib/asset/modals/AssetModalRenderer'
 import { Asset } from '@/lib/db'
+import { formatDate } from '@/lib/utils/date'
 
 interface Props {
   asset: Asset
@@ -62,7 +63,7 @@ export default function AssetCard({ asset, cardLike = true, icon }: Props) {
             {asset.descShort}
           </p>
           <div className="text-xs text-gray-500 mt-auto">
-            {asset.lastUpdate}
+            {formatDate(asset.lastUpdate)}
           </div>
         </div>
         

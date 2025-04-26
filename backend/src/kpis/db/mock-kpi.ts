@@ -9,7 +9,7 @@ const kpis: Kpis = {
     id: `sales-growth-yoy-eu`,
     name: `Europe Sales Growth YoY`,
     descShort: `Year-over-year sales growth in Europe`,
-    lastUpdate: `03/23/2025`,
+    lastUpdate: `2025-03-23`,
     sentiment: { favorite: true, trending: false, featured: true },
     type: 'kpi',
     addressedQuestions: [
@@ -34,7 +34,7 @@ const kpis: Kpis = {
     id: `software-mrr`,
     name: `Software MRR`,
     descShort: `Monthly Recurring Revenue for Software Solutions`,
-    lastUpdate: `03/24/2025`,
+    lastUpdate: `2025-03-24`,
     sentiment: { favorite: true, trending: true, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -59,7 +59,7 @@ const kpis: Kpis = {
     id: `overall-csat-score`,
     name: `Overall Customer Satisfaction Score`,
     descShort: `Average customer satisfaction across all products/services`,
-    lastUpdate: `03/20/2025`,
+    lastUpdate: `2025-03-20`,
     sentiment: { favorite: false, trending: false, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -84,7 +84,7 @@ const kpis: Kpis = {
     id: `hardware-defects-rate`,
     name: `Hardware Production Defects Rate`,
     descShort: `Percentage of defective hardware units produced`,
-    lastUpdate: `03/22/2025`,
+    lastUpdate: `2025-03-22`,
     sentiment: { favorite: false, trending: false, featured: true },
     type: 'kpi',
     addressedQuestions: [
@@ -109,7 +109,7 @@ const kpis: Kpis = {
     id: `cloud-service-uptime`,
     name: `Cloud Service Uptime`,
     descShort: `Percentage of time cloud services are operational`,
-    lastUpdate: `03/24/2025`,
+    lastUpdate: `2025-03-24`,
     sentiment: { favorite: true, trending: false, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -134,7 +134,7 @@ const kpis: Kpis = {
     id: `customer-acquisition-na`,
     name: `North America New Customer Acquisition`,
     descShort: `Number of new customers acquired in North America`,
-    lastUpdate: `03/23/2025`,
+    lastUpdate: `2025-03-23`,
     sentiment: { favorite: false, trending: false, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -159,7 +159,7 @@ const kpis: Kpis = {
     id: `market-share-br`,
     name: `Brazil Market Share`,
     descShort: `Our percentage of the total market in Brazil`,
-    lastUpdate: `03/21/2025`,
+    lastUpdate: `2025-03-21`,
     sentiment: { favorite: false, trending: false, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -184,7 +184,7 @@ const kpis: Kpis = {
     id: `churn-rate-apac`,
     name: `Asia Pacific Customer Churn Rate`,
     descShort: `Percentage of customers lost in Asia Pacific`,
-    lastUpdate: `03/24/2025`,
+    lastUpdate: `2025-03-24`,
     sentiment: { favorite: false, trending: false, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -209,7 +209,7 @@ const kpis: Kpis = {
     id: `innovatesoft-social-engagement`,
     name: `InnovateSoft Social Media Engagement`,
     descShort: `Engagement rate on InnovateSoft social media channels`,
-    lastUpdate: `03/23/2025`,
+    lastUpdate: `2025-03-23`,
     sentiment: { favorite: true, trending: false, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -234,7 +234,7 @@ const kpis: Kpis = {
     id: `globaltech-web-traffic`,
     name: `GlobalTech Website Traffic`,
     descShort: `Total traffic to the main GlobalTech website`,
-    lastUpdate: `03/24/2025`,
+    lastUpdate: `2025-03-24`,
     sentiment: { favorite: false, trending: true, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -259,7 +259,7 @@ const kpis: Kpis = {
     id: `rd-project-completion`,
     name: `Research Project Completion Rate`,
     descShort: `Percentage of research projects completed on time`,
-    lastUpdate: `03/22/2025`,
+    lastUpdate: `2025-03-22`,
     sentiment: { favorite: false, trending: false, featured: false },
     type: 'kpi',
     addressedQuestions: [
@@ -284,7 +284,7 @@ const kpis: Kpis = {
     id: `healthfirst-eu-csat`,
     name: `HealthFirst Europe Customer Satisfaction`,
     descShort: `Customer satisfaction score for HealthFirst Europe`,
-    lastUpdate: `03/23/2025`,
+    lastUpdate: `2025-03-23`,
     sentiment: { favorite: true, trending: false, featured: false },
     type: 'kpi',
     addressedQuestions: [

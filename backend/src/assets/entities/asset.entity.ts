@@ -1,9 +1,18 @@
+import { 
+  IsBoolean, 
+  IsDateString, 
+  IsIn, 
+  IsString, 
+  ValidateNested, 
+} from "class-validator"
+import { Type } from "class-transformer"
 import { Kpi, Layout, Storyboard } from "src/common/db"
 
 // * misc types
 
 export {
   AssetBase,
+  Sentiment,
 }
 export type {
   // Asset, 
@@ -15,17 +24,36 @@ type Asset =
   | Storyboard
 ;
 
-class AssetBase {
-  id: string
-  name: string
-  descShort: string
-  lastUpdate: string
-  sentiment: Sentiment
-  type: `kpi` | `layout` | `storyboard`
-}
+const assetBase_TypeTypes = [
+  `kpi`,
+  `layout`,
+  `storyboard`,
+] as const
+type AssetBase_Type = typeof assetBase_TypeTypes[number]
 
-type Sentiment = {
+class Sentiment {
+  @IsBoolean()
   favorite: boolean
+  @IsBoolean()
   featured: boolean
+  @IsBoolean()
   trending: boolean
 }
+
+class AssetBase {
+  @IsString()
+  id: string
+  @IsString()
+  name: string
+  @IsString()
+  descShort: string
+  @IsDateString()
+  lastUpdate: string
+  @ValidateNested()
+  @Type(() => Sentiment)
+  sentiment: Sentiment
+  @IsIn(assetBase_TypeTypes)
+  type: AssetBase_Type
+}
+
+
