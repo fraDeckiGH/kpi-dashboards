@@ -1,7 +1,7 @@
-import { Injectable } from '@nestjs/common';
-import { CreateKpiDto } from './dto/create-kpi.dto';
-import { UpdateKpiDto } from './dto/update-kpi.dto';
-import { Kpi, kpis } from 'src/common/db';
+import { Injectable } from '@nestjs/common'
+import { CreateKpiDto } from './dto/create-kpi.dto'
+import { UpdateKpiDto } from './dto/update-kpi.dto'
+import { Kpi, kpis } from 'src/common/db'
 
 @Injectable()
 export class KpisService {

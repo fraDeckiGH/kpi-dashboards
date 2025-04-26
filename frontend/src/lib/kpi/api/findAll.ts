@@ -11,7 +11,6 @@ async function queryFn() {
   const data = await response.json()
   const ret: Kpis = {
     ...data, 
-    
   }
   
   return ret

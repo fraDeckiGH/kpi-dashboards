@@ -14,6 +14,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({
     // https://docs.nestjs.com/techniques/validation#transform-payload-objects
     transform: true, // transform payloads to DTO instances
+    // https://docs.nestjs.com/techniques/validation#stripping-properties
+    whitelist: true, // strip validated obj of any properties w/out decorators
   }))
   
   await app.listen(process.env.PORT ?? 4000)
