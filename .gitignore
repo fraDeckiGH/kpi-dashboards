@@ -1,7 +1,8 @@
 
 # {↑} tmp
-ai-rules*
-notes/assignment
+
+
+# env
 
 # # dotenv environment variable files ~backend/.gitignore
 # .env
@@ -10,7 +11,10 @@ notes/assignment
 # .env.production.local
 # .env.local
 
-# vscode
+
+# IDE
+
+.trae
 .vscode/*
 
 

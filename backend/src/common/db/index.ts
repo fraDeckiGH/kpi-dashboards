@@ -3,11 +3,10 @@
 export * from "src/affiliates/db/mock-affiliate"
 export * from "src/affiliates/db/types"
 
-export * from "src/assets/db/types"
+export * from "src/assets/entities/asset.entity"
 
 export * from "src/kpis/db/mock-kpi"
-export * from "src/kpis/db/types"
-// export * from "src/kpis/entities/kpi.entity"
+export * from "src/kpis/entities/kpi.entity"
 
 export * from "src/layouts/db/mock-layout"
 export * from "src/layouts/db/types"
