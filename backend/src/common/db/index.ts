@@ -11,6 +11,8 @@ export * from "src/kpis/entities/kpi.entity"
 export * from "src/layouts/db/mock-layout"
 export * from "src/layouts/db/types"
 
+export * from "src/status/entities/status.entity"
+
 export * from "src/storyboards/db/mock-storyboard"
 export * from "src/storyboards/db/types"
 

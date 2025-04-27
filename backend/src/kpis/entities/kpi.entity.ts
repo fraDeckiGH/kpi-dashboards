@@ -7,14 +7,16 @@ import {
 	ValidateNested,
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AssetBase, Visual, visualTypes } from "src/common/db"
+import { AssetBase, StatusWrap, Visual, visualTypes } from "src/common/db"
 
 export {
   Kpi,
+  Kpis,
+  KpiAsset,
   // KpiInquiry,
 }
 export type {
-  Kpis,
+  // Kpis,
 }
 
 class KpiBase {
@@ -47,9 +49,14 @@ class KpiBase {
   @IsIn(visualTypes, { each: true })
   visualsAvailable: Visual[]
 }
-class Kpi extends IntersectionType(
+
+class KpiAsset extends IntersectionType(
   AssetBase,
   KpiBase,
+) {}
+class Kpi extends IntersectionType(
+  KpiAsset,
+  StatusWrap,
 ) {}
 
 type Kpis = Record<Kpi["id"], Kpi>

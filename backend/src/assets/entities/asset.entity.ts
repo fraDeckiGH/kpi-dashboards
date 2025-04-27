@@ -52,6 +52,9 @@ class AssetBase {
   @ValidateNested()
   @Type(() => Sentiment)
   sentiment: Sentiment
+  // @ValidateNested()
+  // @Type(() => Status)
+  // status: Status
   @IsIn(assetBase_TypeTypes)
   type: AssetBase_Type
 }
