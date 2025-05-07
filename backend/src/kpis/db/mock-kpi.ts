@@ -29,6 +29,10 @@ const kpis: Kpis = {
     recommendedVisual: `line-chart`,
     selectedVisual: `line-chart`,
     visualsAvailable: [`line-chart`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'software-mrr': {
     id: `software-mrr`,
@@ -54,6 +58,10 @@ const kpis: Kpis = {
     recommendedVisual: `line-chart`,
     selectedVisual: `bar-chart`,
     visualsAvailable: [`bar-chart`, `gauge`, `line-chart`, `pie-chart`, `table`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'overall-csat-score': {
     id: `overall-csat-score`,
@@ -79,6 +87,10 @@ const kpis: Kpis = {
     recommendedVisual: `gauge`,
     selectedVisual: `line-chart`,
     visualsAvailable: [`gauge`, `bar-chart`, `line-chart`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'hardware-defects-rate': {
     id: `hardware-defects-rate`,
@@ -104,6 +116,10 @@ const kpis: Kpis = {
     recommendedVisual: `table`,
     selectedVisual: `pie-chart`,
     visualsAvailable: [`gauge`, `line-chart`, `pie-chart`, `table`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'cloud-service-uptime': {
     id: `cloud-service-uptime`,
@@ -129,6 +145,10 @@ const kpis: Kpis = {
     recommendedVisual: `gauge`,
     selectedVisual: `gauge`,
     visualsAvailable: [`gauge`, `line-chart`, `table`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'customer-acquisition-na': {
     id: `customer-acquisition-na`,
@@ -154,6 +174,10 @@ const kpis: Kpis = {
     recommendedVisual: `line-chart`,
     selectedVisual: `line-chart`,
     visualsAvailable: [`bar-chart`, `gauge`, `line-chart`, `pie-chart`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'market-share-br': {
     id: `market-share-br`,
@@ -179,6 +203,10 @@ const kpis: Kpis = {
     recommendedVisual: `pie-chart`,
     selectedVisual: `pie-chart`,
     visualsAvailable: [`bar-chart`, `pie-chart`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'churn-rate-apac': {
     id: `churn-rate-apac`,
@@ -204,6 +232,10 @@ const kpis: Kpis = {
     recommendedVisual: `bar-chart`,
     selectedVisual: `bar-chart`,
     visualsAvailable: [`bar-chart`, `table`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'innovatesoft-social-engagement': {
     id: `innovatesoft-social-engagement`,
@@ -229,6 +261,10 @@ const kpis: Kpis = {
     recommendedVisual: `table`,
     selectedVisual: `bar-chart`,
     visualsAvailable: [`bar-chart`, `line-chart`, `table`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'globaltech-web-traffic': {
     id: `globaltech-web-traffic`,
@@ -254,6 +290,10 @@ const kpis: Kpis = {
     recommendedVisual: `line-chart`,
     selectedVisual: `pie-chart`,
     visualsAvailable: [`line-chart`, `bar-chart`, `pie-chart`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'rd-project-completion': {
     id: `rd-project-completion`,
@@ -279,6 +319,10 @@ const kpis: Kpis = {
     recommendedVisual: `bar-chart`,
     selectedVisual: `bar-chart`,
     visualsAvailable: [`bar-chart`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
   'healthfirst-eu-csat': {
     id: `healthfirst-eu-csat`,
@@ -304,5 +348,9 @@ const kpis: Kpis = {
     recommendedVisual: `gauge`,
     selectedVisual: `table`,
     visualsAvailable: [`bar-chart`, `gauge`, `line-chart`, `pie-chart`, `table`],
+    status: {
+      current: `active`,
+      lastUpdate: new Date().toISOString(),
+    },
   },
 }

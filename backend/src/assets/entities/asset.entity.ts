@@ -6,7 +6,12 @@ import {
   ValidateNested, 
 } from "class-validator"
 import { Type } from "class-transformer"
-import { Kpi, Layout, Storyboard } from "src/common/db"
+import { 
+  // Kpi, // ? FIX circular dep: direct import
+  Layout, 
+  Storyboard, 
+} from "src/common/db"
+import { Kpi } from "src/kpis/entities/kpi.entity"
 
 // * misc types
 

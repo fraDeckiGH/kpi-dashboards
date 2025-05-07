@@ -17,6 +17,9 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({
     // https://docs.nestjs.com/techniques/validation#transform-payload-objects
     transform: true, // transform payloads to DTO instances
+    transformOptions: {
+      enableImplicitConversion: true, // ensure query/path params are converted
+    },
     // https://docs.nestjs.com/techniques/validation#stripping-properties
     whitelist: true, // strip validated obj of any properties w/out decorators
   }))

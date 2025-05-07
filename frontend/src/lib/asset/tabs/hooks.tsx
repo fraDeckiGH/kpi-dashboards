@@ -1,19 +1,21 @@
 import { useKpisStore } from '@/lib/kpi/db/store-kpi'
-import { useFindAllKpis } from '@/lib/kpi/api/findAll'
+import { useFindAllKpis } from '@/lib/kpi/queries/findAll'
 import { useEffect } from 'react'
 
 export function useKpis() {
   const setKpis = useKpisStore.use.setKpis()
   const { 
-    data: kpis, 
-    status: kpisStatus, 
-  } = useFindAllKpis()
+    data, 
+    status, 
+  } = useFindAllKpis({
+    limit: 20, 
+  })
   
   useEffect(() => {
-    switch (kpisStatus) {
+    switch (status) {
       case "success": {
-        if (kpis) {
-          setKpis(kpis)
+        if (data) {
+          setKpis(data.data)
         }
         break
       }
@@ -23,5 +25,5 @@ export function useKpis() {
     return () => {
       setKpis() 
     }
-  }, [ kpis ])
+  }, [ data ])
 }

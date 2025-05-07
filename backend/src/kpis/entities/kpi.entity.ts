@@ -7,7 +7,14 @@ import {
 	ValidateNested,
 } from 'class-validator'
 import { Type } from 'class-transformer'
-import { AssetBase, StatusWrap, Visual, visualTypes } from "src/common/db"
+import { 
+  // AssetBase, // ? FIX circular dep: direct import
+  // StatusWrap, // ? FIX circular dep: direct import
+  Visual, 
+  visualTypes, 
+} from "src/common/db"
+import { AssetBase } from "src/assets/entities/asset.entity"
+import { StatusWrap } from "src/status/entities/status.entity"
 
 export {
   Kpi,

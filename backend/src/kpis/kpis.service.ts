@@ -109,7 +109,7 @@ export class KpisService {
     const ret: FindAllReturnKpiDto = {
       data,
       dataLength: leanItems.length,
-      pageCurrent: Math.floor(skip / limit) + 1,
+      pageCurrent: Math.floor(skip / limit)/*  + 1 */,
       pagesLength: Math.ceil(leanItems.length / limit),
     }
     return ret
