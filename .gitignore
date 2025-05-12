@@ -2,6 +2,8 @@
 # {↑} tmp
 
 
+
+
 # env
 
 # # dotenv environment variable files ~backend/.gitignore
@@ -18,4 +20,7 @@
 .vscode/*
 
 
+# {↓} misc
+
+mcp/
 

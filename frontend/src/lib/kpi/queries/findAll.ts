@@ -1,27 +1,66 @@
 import { api_baseUrl } from "@/lib/api/api"
-import { Kpi, Kpis } from "@/lib/db"
+import { 
+  Kpi as Entity, 
+  Kpis, 
+} from "@/lib/db"
 import { flattenToSearchParams } from "@/lib/utils"
 import { keepPreviousData, QueryFunctionContext, useQuery } from "@tanstack/react-query"
 
+
+// #region BE: find-all-query-kpi.dto.ts
+// * {↑} misc
+type Filter_filter = 
+  | Exclude<keyof Entity, 'id'>
+  | AddressedQuestions_NestedKeys
+  | Sentiment_NestedKeys
+;
+
+// * nested keys
+type AddressedQuestions_NestedKeys = `addressedQuestions.${keyof Entity['addressedQuestions'][number]}`
+type Sentiment_NestedKeys = `sentiment.${keyof Entity['sentiment']}`
+
+// * sort
+type SortT =
+  | SortableKeys
+  // | AddressedQuestions_NestedKeys // cant sort nested keys
+  | Sentiment_NestedKeys
+;
+type SortableKeys = Exclude<keyof Entity, 
+  | 'metrics' 
+  | 'visualsAvailable' 
+  | 'status' 
+  | 'sentiment' 
+  | 'addressedQuestions'
+>
+// #endregion 
+
+
 /** backend: FindAllQueryKpiDto */
 type Filter = Partial<{
-  filter: (Exclude<keyof Kpi, 'id'>)[]
+  // filter: string[]
+  filter: Filter_filter[]
+  
   limit: number
   skip: number
+  
   sort: {
-    field: keyof Kpi
-    direction: 'asc' | 'desc'
+    // field: PropertyKey // supports nested paths, eg 'nested.field'
+    field: SortT // supports nested paths, eg 'nested.field'
+    nulls?: 'first' | 'last'
+    order: 'asc' | 'desc'
   }
 }>
+
 type QueryKey = [ string, Filter ]
 type QueryFnArgs = QueryFunctionContext<QueryKey>
 type QueryFnReturn = {
   data: Kpis
   // properties from FindAllReturnDto (backend)
-  dataLength: number
+  dataTotalLength: number
   pageCurrent: number
   pagesLength: number
 }
+
 
 async function queryFn({ 
   queryKey, 

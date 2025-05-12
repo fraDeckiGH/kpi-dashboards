@@ -3,17 +3,21 @@ import {
   GoneException, 
   Injectable, 
   NotFoundException,
+  UnprocessableEntityException,
 } from '@nestjs/common'
-import { CreateKpiDto } from 'src/kpis/dto/create-kpi.dto'
-import { UpdateKpiDto } from 'src/kpis/dto/update-kpi.dto'
+import { CreateKpiDto } from 'src/common/db'
+import { UpdateKpiDto } from 'src/common/db'
 import { 
   Kpi as Entity, 
   Kpis as Entitys, // purposefully called 'Entitys' instead of 'Entities'
   kpis, 
 } from 'src/common/db'
-import { FindAllQueryKpiDto } from 'src/kpis/dto/find-all-query-kpi.dto'
+import { 
+  FindAllQueryKpiDto, 
+  FindAllQueryKpiDto_SortT as SortT, 
+} from 'src/common/db'
 import { pick, sortByField } from 'src/common/utils'
-import { FindAllReturnKpiDto } from 'src/kpis/dto/find-all-return-kpi.dto'
+import { FindAllReturnKpiDto } from 'src/common/db'
 import { plainToInstance } from 'class-transformer'
 
 @Injectable()
@@ -28,6 +32,9 @@ export class KpisService {
     const entity = this.entitys[id]
     
     if (entity) {
+      if (!entity.status?.current) {
+        throw new UnprocessableEntityException(`Record with ID '${id}' doesn't match current schema`)
+      }
       switch (entity.status.current) {
         case 'active': {
           throw new ConflictException(`Record with ID '${id}' already exists`)
@@ -61,6 +68,9 @@ export class KpisService {
     if (!entity) {
       throw new NotFoundException(`Record with ID '${id}' not found`)
     }
+    if (!entity.status?.current) {
+      throw new UnprocessableEntityException(`Record with ID '${id}' doesn't match current schema`)
+    }
     switch (entity.status.current) {
       case 'disabled': {
         throw new ConflictException(`Record with ID '${id}' is ${entity.status.current} already`)
@@ -80,10 +90,20 @@ export class KpisService {
     const allItems = Object.values(this.entitys)
     
     // * filter out disabled records
-    const nonDisabledItems = allItems.filter(entity => entity.status.current !== 'disabled')
+    const nonDisabledItems = allItems.filter((entity) => {
+      // const { id } = entity
+      
+      // if (!entity.status?.current) { // ! dont  throw/keep hostage  all records
+      //   throw new UnprocessableEntityException(`Record with ID '${id}' doesn't match current schema`)
+      // }
+      // if (entity.status.current !== 'disabled') {
+      if (!entity.status || entity.status.current !== 'disabled') {
+        return entity
+      }
+    })
     
     // * [sort]
-    const sortedItems = !sort ? nonDisabledItems : sortByField(nonDisabledItems, sort)
+    const sortedItems = !sort ? nonDisabledItems : sortByField<Entity, SortT>(nonDisabledItems, sort)
     
     // * pagination
     const paginatedItems = sortedItems.slice(skip, skip + limit)
@@ -108,9 +128,9 @@ export class KpisService {
     // * return
     const ret: FindAllReturnKpiDto = {
       data,
-      dataLength: leanItems.length,
-      pageCurrent: Math.floor(skip / limit)/*  + 1 */,
-      pagesLength: Math.ceil(leanItems.length / limit),
+      dataTotalLength: nonDisabledItems.length,
+      pageCurrent: Math.round((skip + limit) / limit)/*  + 1 */,
+      pagesLength: Math.ceil(nonDisabledItems.length / limit),
     }
     return ret
   }
@@ -120,6 +140,9 @@ export class KpisService {
     
     if (!entity) {
       throw new NotFoundException(`Record with ID '${id}' not found`)
+    }
+    if (!entity.status?.current) {
+      throw new UnprocessableEntityException(`Record with ID '${id}' doesn't match current schema`)
     }
     switch (entity.status.current) {
       case 'disabled': {
@@ -148,6 +171,9 @@ export class KpisService {
     if (!entity) {
       throw new NotFoundException(`Record with ID '${id}' not found`)
     }
+    if (!entity.status?.current) {
+      throw new UnprocessableEntityException(`Record with ID '${id}' doesn't match current schema`)
+    }
     switch (entity.status.current) {
       case 'active': {
         throw new ConflictException(`Record with ID '${id}' is ${entity.status.current}`)
@@ -170,6 +196,9 @@ export class KpisService {
     if (!entity) {
       throw new NotFoundException(`Record with ID '${id}' not found`)
     }
+    if (!entity.status?.current) {
+      throw new UnprocessableEntityException(`Record with ID '${id}' doesn't match current schema`)
+    }
     switch (entity.status.current) {
       case 'disabled': {
         throw new GoneException(`Record with ID '${id}' is ${entity.status.current}`)
@@ -179,7 +208,6 @@ export class KpisService {
     
     const updated = Object.assign(entity, updateDto)
     updated.lastUpdate = new Date().toISOString()
-    
     return updated
   }
   

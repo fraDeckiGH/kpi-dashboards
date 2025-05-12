@@ -5,11 +5,13 @@ export {
 }
 
 class FindAllReturnDto {
+  /** total No. of records in db */
   @IsInt()
-  dataLength: number
+  dataTotalLength: number
   @IsInt()
-  @Min(0)
+  @Min(1)
   pageCurrent: number
+  /** total No. of pages */
   @IsInt()
   pagesLength: number
 }

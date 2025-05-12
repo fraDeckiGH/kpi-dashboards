@@ -12,11 +12,11 @@ import {
   SerializeOptions, 
 } from '@nestjs/common'
 import { KpisService } from 'src/kpis/kpis.service'
-import { CreateKpiDto } from 'src/kpis/dto/create-kpi.dto'
-import { UpdateKpiDto } from 'src/kpis/dto/update-kpi.dto'
-import { FindAllQueryKpiDto } from 'src/kpis/dto/find-all-query-kpi.dto'
+import { CreateKpiDto } from 'src/common/db'
+import { UpdateKpiDto } from 'src/common/db'
+import { FindAllQueryKpiDto } from 'src/common/db'
 import { Kpi as Entity } from 'src/common/db'
-import { FindAllReturnKpiDto } from 'src/kpis/dto/find-all-return-kpi.dto'
+import { FindAllReturnKpiDto } from 'src/common/db'
 
 @UseInterceptors(ClassSerializerInterceptor)
 @SerializeOptions({ type: Entity })

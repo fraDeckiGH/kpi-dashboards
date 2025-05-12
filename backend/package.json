@@ -13,9 +13,12 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test:kpis.service.find-all": "npm run test src/kpis/tests/kpis.service.find-all.spec.ts",
+    "test:watch:kpis.service.find-all": "npm run test:watch src/kpis/tests/kpis.service.find-all.spec.ts",
+    "test:kpis.service.find-one": "npm run test src/kpis/tests/kpis.service.find-one.spec.ts",
+    "test:watch:kpis.service.find-one": "npm run test:watch src/kpis/tests/kpis.service.find-one.spec.ts",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "test:watch:kpis-service": "npm run test:watch src/kpis/kpis.service.spec.ts",
     "test:cov": "npm run test -- --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "npm run test -- --config ./test/jest-e2e.json"
