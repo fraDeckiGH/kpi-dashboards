@@ -8,18 +8,7 @@ Valid for both FE & BE
 $ npm install
 ```
 
-## Run the FE client
-
-```bash
-# (preliminary step) set the right path
-$ cd frontend
-```
-```bash
-# dev + watch mode
-$ npm run dev
-```
-
-## Run the BE server
+## Run BE server
 
 ```bash
 # (preliminary step) set the right path
@@ -33,16 +22,27 @@ $ npm run start
 $ npm run start:dev
 ```
 
-## Run tests
+## Run FE client
 
-### backend
+```bash
+# (preliminary step) set the right path
+$ cd frontend
+```
+```bash
+# dev + watch mode
+$ npm run dev
+```
+
+## Tests
+
+### Back-End
 
 ```bash
 # (preliminary step) set the right path
 $ cd backend
 ```
 
-#### unit tests
+#### Run unit tests
 
 ```bash
 # KpisService.findAll : run once
