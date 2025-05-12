@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+## Project setup
+
+Valid for both FE & BE
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$ npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run the FE client
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# (preliminary step) set the right path
+$ cd frontend
+```
+```bash
+# dev + watch mode
+$ npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Run the BE server
 
-## Learn More
+```bash
+# (preliminary step) set the right path
+$ cd backend
+```
+```bash
+# dev
+$ npm run start
 
-To learn more about Next.js, take a look at the following resources:
+# dev + watch mode
+$ npm run start:dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Run tests
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### backend
 
-## Deploy on Vercel
+```bash
+# (preliminary step) set the right path
+$ cd backend
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### unit tests
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# KpisService.findAll : run once
+$ npm run test src/kpis/tests/kpis.service.find-all.spec.ts
+# KpisService.findAll : run once + watch mode
+$ npm run test:watch src/kpis/tests/kpis.service.find-all.spec.ts
+
+# KpisService.findOne : run once
+$ npm run test src/kpis/tests/kpis.service.find-one.spec.ts
+# KpisService.findOne : run once + watch mode
+$ npm run test:watch src/kpis/tests/kpis.service.find-one.spec.ts
+
+# all unit tests
+$ npm run test
+```
+
+
+

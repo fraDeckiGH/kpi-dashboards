@@ -1,0 +1,10 @@
+cmds run
+
+proj init
+nest new backend --strict
+
+config setup
+npm i --save @nestjs/config
+
+
+
