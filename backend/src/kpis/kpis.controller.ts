@@ -27,8 +27,8 @@ export class KpisController {
   // ? methods sorted by route
 
   @Post()
-  create(@Body() createKpiDto: CreateKpiDto): Entity {
-    return this.kpisService.create(createKpiDto)
+  create(@Body() createDto: CreateKpiDto): Entity {
+    return this.kpisService.create(createDto)
   }
 
   @SerializeOptions({ type: FindAllReturnKpiDto })
@@ -48,9 +48,9 @@ export class KpisController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: Entity['id'], @Body() updateKpiDto: UpdateKpiDto): Entity {
-    console.log(`kpi patch`, updateKpiDto)
-    return this.kpisService.update(id, updateKpiDto)
+  update(@Param('id') id: Entity['id'], @Body() updateDto: UpdateKpiDto): Entity {
+    console.log(`kpi patch`, updateDto)
+    return this.kpisService.update(id, updateDto)
   }
 
   @Patch(':id/disable')
